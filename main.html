@@ -1,0 +1,428 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>solomon</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo"><svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="red" />
+            <stop offset="100%" stop-color="black" />
+          </linearGradient>
+        </defs>
+        <text x="10" y="50" font-family="Arial Black" font-size="35" fill="url(#grad1)">K</text>
+        <polygon points="30,10 40,10 32,35 45,35 25,60 35,35 20,35" fill="url(#grad1)" />
+      </svg>
+      Kwik<span>TUMA</span></div>
+    <ul class="nav-links">
+      <li><a href="#home"><span>Home</span></a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#calculator">Weight Calculator</a></li>
+      <li><a href="#track">Track Shipment</a></li>
+      <li><a href="#about">About Us</a></li>
+    <li><a href="booking-page.html">B/S</a></li>
+
+
+      <li><button class="login">Log in</button></li>
+      <li><button class="signup">Sign up</button></li>
+    </ul>
+    <div class="menu-toggle">&#9776;</div>
+  </nav>
+  <div class="padding" id="home">
+    <div class="container">
+      <div class="content-wrapper">
+        <div class="text-block">
+          <h1>Ship faster,<br> and smarter<br> with Kwik<span>Tuma</span></h1>
+          <p>Reliable global logistics and<br> freight forwarding Services</p>
+
+          <div class="track-overlay" id="track">
+            <div class="track">
+              <h2>Track Your Shipment</h2>
+              <form class="track-form" id="trackForm" onsubmit="trackShipment(event)">
+                <div class="input-wrapper">
+                  <input type="text" id="trackingNumber" placeholder="Enter tracking number" required />
+                  <button type="submit" class="okay">Track</button>
+                </div>
+              </form>
+              <div id="trackingResult"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-block">
+          <img src="solomon.jpg" class="flipped-image" alt="Image" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="customer">
+    <h2>Trusted by 100k plus customers</h2>
+    <div class="footer-socials">
+      <a href="https://www.clickup.com" target="_blank">
+        <img src="clickup 13.png" alt="ClickUp Logo">
+      </a>
+      <a href="https://www.dropbox.com" target="_blank">
+        <img src="Gr 14.png" alt="Gr Logo">
+      </a>
+      <a href="https://www.segment.com" target="_blank">
+        <img src="segment 15.png" alt="Segment Logo">
+      </a>
+      <a href="https://www.freshbooks.com" target="_blank">
+        <img src="freshbooks-logo-1 1.png" alt="FreshBooks Logo">
+      </a>
+      <a href="https://www.GitHub.com" target="_blank">
+        <img src="GitHub_Logo 1.png" alt="GitHub Logo">
+      </a>
+    </div>
+  </div>
+
+
+  <div class="man" id="about">
+    <div class="color">
+      <div class="text-left-right">
+        <div class="text-left">
+          <h4>About</h4>
+          <h2>KwikTuma</h2>
+          <p>learn more<svg class="small-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </p>
+        </div>
+        <div class="text-right">
+          <p>
+            At KwikTuma we're redifining the logistics with speed, precision, and core. Whether it's same-day delivery
+            or long-haul-freight, we provide
+            smart, reliable and cost-effective solutions tailored to your needs. Our name says it all-Kwik for speed,
+            Tuma (swahli for "send")
+            for purpose.
+          </p>
+          <p>
+            With KwikTuma you're not just sending a package you are sending trust
+          </p>
+
+        </div>
+
+      </div>
+      <img src="Rectangle 21 (1).png" alt="">
+    </div>
+  </div>
+
+
+
+  <div class="service" id="services">
+    <h3>Our <span>Services</span></h3>
+    <p>
+      At KwikTuma, we deliver more than just packages-we deliver peace of mind.
+      our range of logistics services is designed to meet your unique needs,
+      with speed, security, and efficiency:
+    </p>
+    <div class="card-container">
+      <div class="card">
+        <div class="icon"><iconify-icon icon="iconamoon:delivery-fast-fill" width="25" height="25"></iconify-icon></div>
+        <h4>Same-Day Local Delivery</h4>
+        <p>Need it moved now? we<br> deliver within your city in just<br> hours-whether it's groceries,<br> gadgets, or
+          gifts</p>
+      </div>
+      <div class="card">
+        <div class="icon"><iconify-icon icon="solar:city-bold" width="25" height="25"></iconify-icon></div>
+        <h4>Inter-State Parcel Transport</h4>
+        <p>Affordable and fast parcel delivery across major cities and towns. KwikTuma connects every corner of the
+          country.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" width="25" height="25">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z" />
+          </svg>
+        </div>
+        <h4>Weight-Based Pricing</h4>
+        <p>Pay only for what you ship.
+          our smart calculator ensures transparent pricing based on weight and zone.
+        </p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48">
+            <g fill="currentColor">
+              <path d="M22.5 28a1.5 1.5 0 1 1 0-3a1.5 1.5 0 0 1 0 3" />
+              <path fill-rule="evenodd"
+                d="M9.429 20q.292 0 .571-.048V28H7.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h33a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H38v-8.048q.28.048.571.048C40.473 20 42 18.448 42 16.551v-2.39a2.7 2.7 0 0 0-.163-.93l-2.18-6.01A1.85 1.85 0 0 0 37.917 6H10.082a1.85 1.85 0 0 0-1.738 1.222l-2.18 6.009a2.7 2.7 0 0 0-.164.93v2.39C6 18.448 7.527 20 9.429 20m-1.385-6.087L10.189 8H37.81l2.145 5.913q.044.12.044.248v2.39A1.44 1.44 0 0 1 38.57 18c-.78 0-1.428-.64-1.428-1.449a1 1 0 0 0-2 0A1.44 1.44 0 0 1 33.713 18c-.78 0-1.428-.64-1.428-1.448a1 1 0 0 0-2 0c0 .808-.648 1.448-1.429 1.448s-1.428-.64-1.428-1.449a1 1 0 1 0-2 0A1.44 1.44 0 0 1 24 18a1.44 1.44 0 0 1-1.429-1.448a1 1 0 0 0-2 0c0 .808-.647 1.448-1.428 1.448s-1.429-.64-1.429-1.449a1 1 0 1 0-2 0c0 .808-.647 1.449-1.428 1.449s-1.429-.64-1.429-1.449a1 1 0 1 0-2 0c0 .808-.647 1.449-1.428 1.449C8.647 18 8 17.36 8 16.551v-2.39q0-.129.044-.248M36 19.122a3.4 3.4 0 0 1-2.286.878a3.4 3.4 0 0 1-2.428-1.014A3.4 3.4 0 0 1 28.857 20a3.4 3.4 0 0 1-2.428-1.014A3.4 3.4 0 0 1 24 20a3.4 3.4 0 0 1-2.429-1.014A3.4 3.4 0 0 1 19.143 20c-.951 0-1.81-.389-2.429-1.014A3.4 3.4 0 0 1 14.286 20c-.88 0-1.68-.333-2.286-.878V28h2.5a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v.5h1.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H36zM8 33a1 1 0 0 1 1-1h30a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1zm2 7v-6h28v6z"
+                clip-rule="evenodd" />
+            </g>
+          </svg></div>
+        <h4>Market-to-Home Pickup</h4>
+        <p>Shop from your favourite market stalls-we'll pick it up and deliver it straight to your door.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><iconify-icon icon="tabler:exchange-filled" width="25" height="25"></iconify-icon></div>
+        <h4>Return & Swap logistics</h4>
+        <p>Need to return or exchange items? We may return handling easy for both buyers and sellers.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><iconify-icon icon="flowbite:tracking-outline" width="25" height="25"></iconify-icon>
+        </div>
+        <h4>Real-Time Package Tracking</h4>
+        <p>Track your package live from pickup to delivery .You're always in the know with KwikTuma.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Services Section -->
+  <section id="service" class="services">
+    <h1>What others are saying about us</h1>
+    <div class="container">
+      <div class="section-header">
+
+        <section class="animate-me">
+          <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+              <h2>KwikTuma transformed our delivery game!</h2>
+              <p>"As an online retailer, fast and reliable delivery is everything. Since switching to KwikTuma, our
+                orders arrive quicker and our customers are happier. The tracking system is smooth,
+                and thier support team is always responsive. KwikTuma isn't just a service-it's a partner we trust."</p>
+              <h4>-Ada N., Founder, ShopZilla NG</h4>
+              <span style="font-size: 160px; align-self: flex-start; font-family: Georgia, serif; color: #999;">“</span>
+
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+              <h2>Efficiency like never before!</h2>
+              <p>"We used to struggle with delays and missing parcels-until we found KwikTuma. Their team is
+                professional,
+                their delivery times are accurate, and the entire process feels effortless. They've helped us streamline
+                our operations."</p>
+              <h4>-Tunde A., Operations Manager, Nova Supplies</h4>
+              <span style="font-size: 160px; align-self: flex-start; font-family: Georgia, serif; color: #999;">“</span>
+
+            </div>
+
+
+          </div>
+        </section>
+
+
+        <div class="numbers">
+          <div class="number">
+            <h1>10,000+</h1>
+            <p>Deliveries Managed</p>
+          </div>
+          <div class="number">
+            <h1>2,500+</h1>
+            <p>Active Clients</p>
+          </div>
+          <div class="number">
+            <h1>98%</h1>
+            <p>On-Time Delivery Rate</p>
+          </div>
+          <div class="number">
+            <h1>200+</h1>
+            <p>Industry Awards</p>
+          </div>
+        </div>
+
+
+        <div class="ready">
+          <div class="ready-left">
+            <h4>Ready to Revolutionize</h4>
+            <h2>Your Logistics Operation</h2>
+            <p>Join countless other businesses that have streamlined their<br>
+              logistics with our cutting-edge solutions</p>
+
+            <button class="glow-btn">Get a Free Quote</button>
+          </div>
+
+
+          <div class="ready-right">
+            <img src="image 2.png" alt="">
+
+          </div>
+        </div>
+
+        <div class="calculator" id="calculator">
+          <h2>Rate Calculator</h2>
+          <p>Join countless other businesses that have streamlined their<br>
+            logistics with our cutting-edge solutions</p>
+
+
+          <section class="calculator">
+            <div class="form-group">
+              <label for="weight">Weight (kg):</label>
+              <input type="number" id="weight" placeholder="Enter weight" required>
+            </div>
+
+            <div class="form-group">
+              <label for="pickup">Pickup Location:</label>
+              <select id="pickup">
+                <!-- Options will be inserted by JS -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="delivery">Delivery Location:</label>
+
+              <select id="delivery">
+                <!-- Options will be inserted by JS -->
+              </select>
+            </div>
+
+            <button class="solomon" onclick="calculateCost()">Calculate</button>
+            <div id="result" style="margin-top: 20px; font-size: 20px; font-weight: bold;"></div>
+
+            <div class="good">
+              <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" fill="white" stroke="white" stroke-width="2" />
+                  <text x="12" y="16" text-anchor="middle" font-size="12" font-family="Arial, sans-serif"
+                    fill="red">i</text>
+                </svg> N 100</h4>
+              <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="9" fill="white" stroke="white" stroke-width="2" />
+                  <path d="M12 8v4l3 3" fill="none" stroke="red" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg> 30 Minutes</h4>
+
+            </div>
+          </section>
+
+        </div>
+
+
+        <div class="mfa">
+          <h2>Frequently Asked Questions</h2>
+          <p>We have put together some commonly asked question</p>
+          <section class="faq-container">
+            <div class="faq-column">
+              <div class="faqitem-left">
+                <div class="faq-question">How do I book a delivery with KwikTuma?</div>
+                <div class="faq-answer">
+                  You can book a delivery directly through our app or website. Just enter your pickup and delivery
+                  details,package,weight, and select your preferred delivery speed.
+                </div>
+              </div>
+
+              <div class="faqitem-left">
+                <div class="faq-question">Do you offer same-day delivery in all cities?</div>
+                <div class="faq-answer">
+                  YES! same-day delivery is available in select major cities. We're continuously expanding our coverge,
+                  so stay tuned for updates in your area.
+                </div>
+              </div>
+
+              <div class="faqitem-left">
+                <div class="faq-question">How much do your service cost?</div>
+                <div class="faq-answer">
+                  Pricing is based on the weight, distance and delivery speed. Use our built-in calculator to get an
+                  instant quote before booking.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-column">
+              <div class="faqitem-right">
+                <div class="faq-question">Can i track my package in real time?</div>
+                <div class="faq-answer">
+                  YES! every delivery comes with a unique tracking link, so you can monitor your package from pick-up to
+                  drop-off in real time, right from your phone or computer.
+                </div>
+              </div>
+
+              <div class="faqitem-right">
+                <div class="faq-question">What happens if my package gets lost?</div>
+                <div class="faq-answer">
+                  In the rare case of a lost package,we offer insurance-backed compensation and a dedicated support team
+                  to assist you immidiately.
+                </div>
+              </div>
+
+              <div class="faqitem-right">
+                <div class="faq-question">Do you offer bulk delivery options?</div>
+                <div class="faq-answer">
+                  Absolutely. We have specialized plans for businesses and bulk senders,including discounted rates and
+                  scheduled pickups.
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        
+
+        <footer class="footer">
+          <div class="footer-container">
+            <div class="footer-section about">
+              <h2><span>Kwik</span>Tuma</h2>
+              <p>We're here to support you every<br> step of the way.</p>
+            </div>
+
+            <div class="footer-section">
+              <h3>Support</h3>
+              <ul>
+                <li><a href="#">Getting Started</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Help Articles</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h3>Legal</h3>
+              <ul>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h3>Our Services</h3>
+              <ul>
+                <li>Shipment Tracking</li>
+                <li>Route Optimization</li>
+                <li>Inventory Management</li>
+                <li>Freight Management</li>
+                <li>Real-Time Analytics</li>
+              </ul>
+            </div>
+          </div>
+
+        
+
+          <div class="footer-bottom">
+            <div class="socials">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>KwikTuma 2025 &copy; All rights reserved.</p>
+          </div>
+        </footer>
+
+<script>
+  fetch("booking-form.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("bookingContainer").innerHTML = data;
+  });
+
+</script>
+
+        <script src="good.js"></script>
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+</body>
+
+</html>

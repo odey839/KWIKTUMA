@@ -1,0 +1,184 @@
+<!-- booking-page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book a Shipment</title>
+</head>
+<body>
+
+  <!-- You already have the booking form here, no need to fetch again -->
+  <section class="booking-section">
+    <h2>Book a Shipment</h2>
+    <div class="circle-border-wrapper">
+      <form id="bookingForm">
+        <input type="text" id="fullName" placeholder="Full Name" required><br>
+        <input type="email" id="emailAddress" placeholder="Your email" required><br>
+        <input type="text" id="pickup" placeholder="Pickup Location" required><br>
+        <input type="text" id="delivery" placeholder="Delivery Location" required><br>
+        <input type="number" id="weight" placeholder="Weight (kg)" required><br>
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+    <div id="bookingResult"></div>
+  </section>
+
+  <style>
+    /* all your styles here... */
+      .booking-section {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #cc3434;
+            border-radius: 45px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow: hidden;
+            
+          }
+          .circle-border-wrapper {
+            position: relative;
+            padding: 40px;
+          }
+          .circle-border-wrapper::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: calc(100% + 30px);
+            height: calc(100% + 30px);
+            border-radius: 50%;
+            background: conic-gradient(
+              #ff416c,
+              #ff4b2b,
+              #ff416c,
+              #007bff,
+              #00c9ff,
+              #ff416c
+            );
+            animation: spinBorder 3s linear infinite;
+            z-index: 1;
+            padding: 5px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6),
+                        0 0 25px rgba(255, 255, 255, 0.4);
+            -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 5px), black calc(100% - 5px));
+            mask: radial-gradient(farthest-side, transparent calc(100% - 5px), black calc(100% - 5px));
+          }
+          @keyframes spinBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+          #bookingForm {
+            position: relative;
+            z-index: 2;
+            background: #cc3434;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: inset 0 0 5px rgba(255,255,255,0.3);
+          }
+          .booking-section input {
+            width: 90%;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            outline: none;
+          }
+          .booking-section button {
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #cc3434;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+          }
+          #bookingResult {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+          }
+  </style>
+
+</body>
+</html>
+
+  <script>
+    // Load booking form dynamically
+    fetch("booking.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("bookingContainer").innerHTML = data;
+      })
+      .catch(error => {
+        console.error("Failed to load booking form:", error);
+      });
+
+      function generateTrackingNumber() {
+    const prefix = "KW";
+    const randomNum = Math.floor(100000 + Math.random() * 900000);
+    return prefix + randomNum;
+  }
+
+  document.getElementById("bookingForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const fullName = document.getElementById("fullName").value.trim();
+    const emailAddress = document.getElementById("emailAddress").value.trim();
+    const pickup = document.getElementById("pickup").value.trim();
+    const delivery = document.getElementById("delivery").value.trim();
+    const weight = document.getElementById("weight").value.trim();
+
+    if (!fullName || !emailAddress || !pickup || !delivery || !weight || weight <= 0) {
+      document.getElementById("bookingResult").innerText = "Please fill all fields correctly.";
+      return;
+    }
+
+    const trackingNumber = generateTrackingNumber();
+
+  const shipmentData = {
+      name: fullName,
+      email: emailAddress, // ✅ Corrected here
+      from: pickup,
+      to: delivery,
+      weight: weight,
+      status: "📦 Booked and processing"
+    };
+
+    localStorage.setItem(trackingNumber, JSON.stringify(shipmentData));
+
+    document.getElementById("bookingResult").innerHTML = `
+      ✅ Booking successful!<br>
+      Your tracking number is: <strong>${trackingNumber}</strong><br>
+      Use it to track your shipment.`;
+
+    document.getElementById("bookingForm").reset();
+  });
+</script>
+
+
+<section class="booking-section" style="display:none; max-width:400px; margin:40px auto; padding:20px; background:#cc3434; color:white; border-radius:45px;">
+  <h2>Book a Shipment</h2>
+  <form id="bookingForm">
+    <input type="text" id="fullName" placeholder="Full Name" required><br>
+    <input type="email" id="emailAddress" placeholder="Your email" required><br>
+    <input type="text" id="pickup" placeholder="Pickup Location" required><br>
+    <input type="text" id="delivery" placeholder="Delivery Location" required><br>
+    <input type="number" id="weight" placeholder="Weight (kg)" required><br>
+    <button type="submit">Book Now</button>
+  </form>
+  <div id="bookingResult"></div>
+</section>
+
+<script>
+  document.getElementById("bsLink").addEventListener("click", function(event) {
+    event.preventDefault();
+    const bookingSection = document.querySelector(".booking-section");
+    bookingSection.style.display = "block";
+    bookingSection.scrollIntoView({ behavior: "smooth" });
+  });
+  </script>
+</body>
+</html>

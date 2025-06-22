@@ -66,7 +66,7 @@
       }
 
       const totalCost = distanceRate + weightRate;
-      document.getElementById("result").innerText = `Estimated Cost: ₦${totalCost.toLocaleString()}`;
+      document.getElementById("result").innerText = `Estimated Cost: ₦${totalCost.toLocaleString()} only`;
     }
 
     populateStates();
@@ -156,3 +156,6 @@
       result.style.color = "red";
     }
   });
+
+
+  
