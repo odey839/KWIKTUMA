@@ -71,6 +71,7 @@
 
     populateStates();
 
+    
 
     const questions = document.querySelectorAll('.faq-question');
 
@@ -140,7 +141,7 @@
   "KW112200": "🕒 Delayed – Sorting resumed",
   "KW990000": "✅ Cleared customs – Lagos",
   "KW443311": "📦 Package confirmed – Minna",
-  "KW223344": "📦 Handed to airline",
+  "KW223344": "📦 In Transit Enugu to Rivers",
   "KW556600": "✅ Delivered to neighbor – signed by 'John'"
 };
  document.getElementById("trackForm").addEventListener("submit", function (e) {
