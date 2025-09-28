@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KwitkTuma Real Airplane Animation</title>
+  <style>
+    /* container across whole screen */
+    #kwiktuma-plane {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      overflow: visible;
+    }
+
+    /* airplane wrapper */
+    .kw-plane {
+      position: absolute;
+      width: 120px;   /* adjust size */
+      height: auto;
+      left: 0;
+      top: 0;
+      transform-origin: center;
+      will-change: transform;
+      animation: plane-fly var(--plane-duration, 12s) linear infinite;
+      animation-delay: var(--plane-delay, 0s);
+    }
+
+    /* flight path */
+    @keyframes plane-fly {
+      from   { transform: translate(-10vw, 110vh) rotate(-15deg) scale(1); }
+      50%    { transform: translate(50vw, 50vh) rotate(0deg) scale(1.05); }
+      to     { transform: translate(110vw, -10vh) rotate(15deg) scale(0.95); }
+    }
+
+    /* pause on hover */
+    .kw-plane:hover { animation-play-state: paused; }
+  </style>
+</head>
+<body>
+
+  <div id="kwiktuma-plane">
+    <img src="bird.png" 
+         alt="Airplane" class="kw-plane">
+  </div>
+
+  <script>
+    // randomize duration & delay
+    const plane = document.querySelector('.kw-plane');
+    const duration = (Math.random() * 5 + 10).toFixed(2) + 's'; // 10–15s
+    const delay = (Math.random() * 4).toFixed(2) + 's';
+    plane.style.setProperty('--plane-duration', duration);
+    plane.style.setProperty('--plane-delay', delay);
+  </script>
+
+</body>
+</html>
